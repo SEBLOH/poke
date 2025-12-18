@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pokemon World - Jelajahi Dunia Pokemon</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --pk-yellow: #ffcb05;
+        --pk-blue: #2a75bb;
+        --pk-dark-blue: #3c5aa6;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Navbar Customization */
+      .navbar {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      /* Hero Section */
+      #hero {
+        background: linear-gradient(135deg, var(--pk-yellow) 0%, #fff 100%);
+        padding: 100px 0;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+      #hero img {
+        width: 100%;
+        max-width: 450px;
+        filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.2));
+      }
+
+      /* Pokemon Cards */
+      .pokemon-card {
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 20px;
+      }
+      .pokemon-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+      }
+      .pokemon-card img {
+        width: 150px;
+        transition: transform 0.3s ease;
+      }
+      .pokemon-card:hover img {
+        transform: scale(1.1);
+      }
+
+      /* Features */
+      .feature-box {
+        transition: all 0.3s ease;
+        border: 2px solid #f8f9fa;
+      }
+      .feature-box:hover {
+        background-color: var(--pk-blue);
+        color: white;
+        border-color: var(--pk-blue);
+      }
+
+      footer {
+        background: var(--pk-dark-blue);
+        color: white;
+        padding: 40px 0;
+      }
+
+            /* Animasi pokeballlllll*/
+        .loading-pokeball {
+            animation: spin 1.5s linear infinite;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.2));
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+}
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-extrabold text-primary" href="#home">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" alt="Logo" height="30" class="me-2">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item"><a class="nav-link text-primary fw-bold border-bottom border-primary border-2  " href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-primary fw-bold" href="collection.html">Collection</a></li>
+            <li class="nav-item"><a class="nav-link text-primary fw-bold" href="pokedex.html">Pokedex Guide</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary text-white px-4 ms-lg-3 rounded-pill" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-4 fw-bold text-primary mb-3">Selamat Datang di Dunia Pokemon!</h1>
+            <p class="lead mb-4 text-secondary">
+              Jelajahi ribuan Pokémon, pelajari statistik mereka, dan jadilah Trainer terbaik di dunia!
+            </p>
+            <div class="d-grid d-md-block gap-3">
+                <a href="#pokemon" class="btn btn-primary btn-lg px-5 rounded-pill shadow">Mulai Jelajah</a>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center mt-5 mt-lg-0">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" class="img-fluid animate-bounce" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="pokemon" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Pokemon Populer</h2>
+        <div class="mx-auto bg-warning" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+    </div>
+    
+    <div id="pokemon-list" class="row g-4 justify-content-center text-center">
+        <div class="py-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg" 
+                 class="loading-pokeball" 
+                 alt="Loading..." 
+                 style="width: 60px;">
+            <p class="mt-3 text-secondary fw-bold">Sedang mencari Pokemon...</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="collection.html" class="btn btn-outline-primary btn-lg rounded-pill px-5 shadow-sm">
+            Cek Koleksi Lainnya &raquo;
+        </a>
+    </div>
+  </div>
+</section>
+
+    <!--Contact-->
+    <section id="contact" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-primary">Hubungi Kami</h2>
+          <p class="text-secondary">Punya pertanyaan seputar Pokemon? Kirimkan pesanmu!</p>
+          <div class="mx-auto bg-warning" style="height: 4px; width: 60px; border-radius: 2px;"></div>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+              <h4 class="fw-bold text-primary mb-4">Informasi Kontak</h4>
+              
+              <div class="d-flex mb-3">
+                <div class="text-warning me-3">
+                  <i class="bi bi-geo-alt-fill"></i> 📍
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Lokasi</h6>
+                  <p class="text-muted small">Pallet Town, Kanto Region.</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-3">
+                <div class="text-warning me-3">
+                  <i class="bi bi-envelope-fill"></i> ✉️
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Email</h6>
+                  <p class="text-muted small">info@pokemonworld.com</p>
+                </div>
+              </div>
+
+              <div class="d-flex mb-3">
+                <div class="text-warning me-3">
+                  <i class="bi bi-telephone-fill"></i> 📞
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Telepon</h6>
+                  <p class="text-muted small">+62 812 3456 7890</p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-top">
+                <h6 class="fw-bold mb-3">Ikuti Kami</h6>
+                <div class="d-flex gap-2">
+                  <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">F</a>
+                  <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">I</a>
+                  <a href="#" class="btn btn-outline-primary btn-sm rounded-circle">X</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="bg-white p-4 rounded-4 shadow-sm">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Nama Lengkap</label>
+                    <input type="text" class="form-control bg-light border-0" placeholder="Contoh: Ash Ketchum" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold">Email</label>
+                    <input type="email" class="form-control bg-light border-0" placeholder="ash@pallet.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Subjek</label>
+                    <select class="form-select bg-light border-0">
+                      <option selected>Pilih Kategori</option>
+                      <option value="1">Laporan Bug</option>
+                      <option value="2">Kerja Sama</option>
+                      <option value="3">Tanya Pokemon</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small fw-bold">Pesan</label>
+                    <textarea class="form-control bg-light border-0" rows="4" placeholder="Tuliskan pesanmu di sini..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 shadow-sm fw-bold">Kirim Pesan Sekarang</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Y gede-->
+    <footer id="footer" class="text-center">
+      <div class="container">
+        <p class="mb-2 fw-bold">Pokemon World</p>
+        <p class="small opacity-75 mb-0">© 2025 Pokemon World — Fan-made Landing Page.</p>
+        <p class="small opacity-50">Data provided by PokeAPI.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
